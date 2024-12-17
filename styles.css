@@ -1,0 +1,257 @@
+html, body {
+    height: 100%; /* dit zorgt ervoor dat de body de hele viewport gebruikt */
+    margin: 0; /* automatisch geen stijlen */
+    padding: 0%; /* automatisch geen stijlen */
+    background-color: white; /* achtergrond kleur van de website */
+    display: flex; /* Activeer Flexbox */
+    flex-direction: column; /* Zet de richting op kolommen: header, main, footer */
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+body {
+    line-height: 1.6; /* de spacing tussen stukken teksten */
+    color: #333; 
+  }
+
+  /* navigatie balk */
+
+  nav ul {
+    background-color: #48a7c2; 
+    margin: 0;
+    padding: 1rem 0; /* ruimte aan de boven en onderkant van de navbar */
+    display: flex;
+    justify-content: flex-end; /* alle inhoud word naar rechts geschoven */
+    align-items: center; /* alles verticaal op dezelfde hoogte plaatsen */
+    margin-bottom: 1rem; /* ruimte tussen navbar en content */
+  }
+
+  nav ul li {
+    list-style-type: none; /* bullet points weghalen */
+    margin-right: 2rem; /* afstand tussen de nav bar elementen */
+  }
+
+  nav ul li a {
+    text-decoration: none; /* de link decoratie verwijderen */
+    color: white;
+    font-size: 1.3rem;
+  }
+
+  nav ul li a:hover{
+    color: blue; /* kleur veranderd als de cursor erop zit */
+    transition: all 200ms ease-in; /* hoe snel de verandering van kleur plaatsvind */
+  }
+
+  nav ul li:first-child { /* Target de eerste nav-item in de HTML */
+    margin-right: auto; /* Stuurt het eerste element naar de linkerkant */
+    margin-left: 2rem; /* geeft ruimte aan de linkerkant van het element */
+  }
+  
+  nav ul li img {
+    max-width: 60px; /* Zorgt ervoor dat de afbeelding niet te groot is */
+    height: auto;
+  }
+
+  /* inhoud van de pagina's */
+
+  main {
+    flex: 1; /* Laat het main-element de resterende ruimte vullen dit zorgt ervoor dat de footer aan de bodem zit */
+  }
+
+/* footer opmaak */
+
+footer{
+  background-color: lightgrey; /* achtergrondkleur van de footer */
+  text-align: center;
+  padding: 1%;
+  bottom: 0; 
+  margin-top: 1rem; /* ruimte tussen content en footer */
+}
+
+@media (max-width: 768px) {
+  footer {
+    padding: 0.5%; /* Kleinere padding op kleinere schermen */
+  }
+}
+  
+ /* ALGEMEEN ALLE PAGINA'S */
+
+section h2 {
+font-size: 2rem; /* lettertype groter maken */
+color: #007acc; /* kleur van de tekst */
+text-align: center; /* Centreert de kopjes */
+}
+
+section h3 {
+  font-size: 1.5rem; /* Vergroot de koptekst van de aflevering. */
+  margin-bottom: 0.5rem; /* Voegt ruimte onder de koptekst toe. */
+}
+
+section p {
+  font-size: 1rem; /* Stelt de lettergrootte in voor de beschrijvende tekst. */
+  margin-bottom: 1rem; /* Voegt ruimte onder de paragraaf toe. */
+}
+
+  /* inhoud van de index pagina */
+
+  .introductie {
+    width: 50%; /* breedte van het element */
+    margin: 0 auto; /* element in het midden plaatsen */
+    text-align: center; /* Tekst in alinea's centreren */
+    border-radius: 1%; /* Maak de randen afgerond */
+    padding: 1rem; /* ruimte tussen de tekst en de rand van de box */ 
+    background-color: #f4f4f4; /* Achtergrondkleur */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* shaduwkleur voor een kaartachtige uitstraling */
+    margin-top: 3%; /* ruimte tussen de navbar en de inhoud */
+  }
+
+  section a {
+    padding: 1.5% 3%; /* De button een padding geven waardoor het meer op een knop lijkt */
+    background-color: #48a7c2; /* kleur van de knop */
+    color: #fff;  /* kleur van de tekst */
+    text-decoration: none; /* de link streep verwijderen */
+    font-size: 1.2rem; /* grote van de tekst */
+    border-radius: 5%; /* de hoeken rond maken */
+    transition: background-color 0.3s; /* de hover transitie */
+  }
+  
+  section a:hover {
+    background-color: #35798f; /* kleur verandering bij het hoveren oer de knop. */
+  }
+
+  /* afleveringen pagina opmaak */
+  
+  .aflevering-container {
+    display: grid; /* Maakt gebruik van een grid-layout om de kaarten netjes uit te lijnen. */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Zorgt ervoor dat het aantal kolommen automatisch wordt aangepast aan de schermgrootte. Elke kaart is minimaal 300px breed en past zich verder aan. */
+    gap: 2rem; /* Voegt ruimte tussen de kaarten toe in het grid. */
+    margin-top: 2rem; /* Voegt ruimte toe boven de grid-container. */
+  }
+  
+  .aflevering-card {
+    display: flex; /* creert een flexbox */
+    flex-direction: column; /* Zorg ervoor dat inhoud in een verticale stapel staat */
+    justify-content: space-between; /* Verdeel de ruimte gelijkmatig */
+    height: auto; /* Laat de hoogte aanpassen aan de inhoud */
+    background-color: #f4f4f4;
+    border-radius: 5%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* dingen die uit de box vallen worden niet zichtbaar */
+    padding: 1rem;
+  }
+  
+  .aflevering-afbeelding {
+    width: 10vw; /* Zorgt ervoor dat de afbeelding altijd een goede breedte heeft. */
+    height: 10vw; /* Zorgt ervoor dat de afbeelding altijd een goede hoogte heeft. */
+    border-bottom: 0.5% solid #ddd; /* Voegt een dunne grijze lijn toe onder de afbeelding. */
+    border-radius: 25px; /* ronde hoeken */
+    margin: 0 auto; /* centreert de afbeelding */
+  }
+  
+  .aflevering-info {
+    padding: 1rem; /* Voegt ruimte rondom de tekstinhoud binnen de kaart toe. */
+  }
+  
+  .audio {
+    width: 100%; /* Zorgt ervoor dat de audioplayer de volledige breedte van de kaart inneemt. */
+  }
+  
+  /* Voor kleinere schermen */
+@media (max-width: 768px) {
+    .aflevering-card {
+      display: block; /* Stapel de inhoud verticaal */
+      text-align: center; /* Centreer tekst op kleinere schermen */
+    }
+  
+    .aflevering-afbeelding {
+      width: 100%; /* Laat de afbeelding volledig breed worden */
+      height: auto; /* Houd de proporties van de afbeelding intact */
+      margin-bottom: 1rem; /* Ruimte tussen afbeelding en tekst */
+    }
+  
+    .aflevering-info {
+      text-align: center; /* Centreer tekst en andere inhoud */
+    }
+  
+    .audio {
+      margin: 1rem auto; /* Centreer de audioplayer */
+    }
+    
+  }
+
+  @media (min-width: 1024px) { /* Desktop modus */
+    .aflevering-container {
+      display: grid; /* Houd de grid-layout */
+      grid-template-columns: repeat(3, 1fr); /* Zorg voor drie kaarten per rij */
+      grid-template-rows: repeat(2, auto); /* Beperk tot twee rijen */
+      gap: 2rem; /* Houd een mooie afstand tussen de kaarten */
+      max-height: calc(2 * 400px + 2rem); /* Stel een limiet in voor hoogte (2 rijen + spacing) */
+      overflow-y: auto; /* Voeg scroll toe als er meer dan 6 kaarten zijn */
+      margin: 0 auto; /* Centreer de container */
+    }
+  }
+
+  /* uitklap functie (lees meer) */
+  
+  summary {
+    cursor: pointer; /* verandert de muis zodat je ziet dat je kan klikken */
+    font-weight: bold;  /* tekst is dikgedrukt */
+    color: #007bff; /* tekst is blauw */
+  }
+  
+  details[open] summary {
+    color: #0056b3; /* Donkerder blauw wanneer geopend */
+  }
+
+ /* overons pagina opmaak */
+
+  .overons-introductie{
+    text-align: center; /* tekst centreren */
+  }
+
+  .makers {
+    text-align: center; /* tekst centreren*/
+  }
+  
+  .profile-container {
+    display: grid; /* maakt er een grid van */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* zorgt ervoor dat de oppervlakten 150px breed zijn,
+    kunnen groter worden tot ze de beschikbare ruimte vullen. */
+    gap: 1rem; /* ruimte tussen de oppervlakten */
+    justify-items: center; /* centreert de grid items horizontaal binnen hun kolommen */ 
+    align-items: center; /* alles verticaal op dezelfde hoogte plaatsen */
+  }
+  
+  .profile img {
+    width: 25%; /* breedte van de afbeelding */
+    height: 25%; /* hoogte van de afbeelding */ 
+    border-radius: 50%; /* ronde hoeken */
+  }
+  
+  .profile audio {
+    width: 50%; /* breedte van het audio fragment */
+  }
+
+  @media (max-width: 800px) {
+    .profile img {
+      width: 50%; /* breedte van de afbeelding */
+      height: 50%; /* hoogte van de afbeelding */ 
+      border-radius: 50%; /* ronde hoeken */
+    }
+
+    .profile audio {
+      width: 100%; /* breedte van het audio fragment */
+    }
+  
+  }
+  
+  /* Over ons sectie */
+  
+  .about-section h3 {
+    text-align: center; /* text centreren */
+  }
+  
+  .about-section p {
+    margin: 0 auto; /* tekst blok centreren */
+    text-align: center; /* tekstblok zelf centraal de tekst neer zetten */
+    width: 50%; /* breedte die het inneemt op de pagina */
+  }
